@@ -8,8 +8,7 @@ title: "事前準備"
 
 - AWSアカウントの作成
   - IAMユーザーの作成は今回不要です
-- [LINE Developers](https://developers.line.biz/ja/)でのMessaging APIチャネル作成
-  - 手順については[こちらの公式ページ](https://developers.line.biz/ja/docs/messaging-api/getting-started)で確認できます
+- [LINE Developers](https://developers.line.biz/ja/)でのアカウント作成
 
 これらさえ準備していただければその他ソフトウェア等のインストールは不要です。本ハンズオンで主に用いる開発環境は以下です。
 
@@ -23,6 +22,38 @@ title: "事前準備"
 上記以外に、その他用いるライブラリや設定ファイルについてはここでは省略しています。また本ハンズオンでの趣旨と大きく関係しない技術要素については本書では詳しい説明を行いません。予めご了承ください。
 
 # Messaging APIのチャネル作成
+
+本ハンズオンでは「今年のアニメ」BOTを作成します。
+
+![](https://storage.googleapis.com/zenn-user-upload/k9vlvi9mcru42v7y6uw31bj9tjmp)
+
+機能はとても単純で、「今年のアニメ」というメッセージを送ると今年放送されているアニメのタイトルの一覧が返ってくるLINE BOTとなっています。まず、LINE BOTを作成するためにはLINE Developersにログインをして**プロバイダ**と**チャネル**の作成が必要になります。
+
+![](https://storage.googleapis.com/zenn-user-upload/kex4x9nwdqiekfmlona6ebiw8zz6)
+
+LINE Developersにログインをしたら、プロバイダーの`作成`ボタンをクリックしてプロバイダーを作成します。すでにプロバイダーを作成されている方はこの手順は不要です。
+
+![](https://storage.googleapis.com/zenn-user-upload/ac4yy0mxuavx2dqum1pje1bfcapd)
+
+プロバイダーを作成したら`新規チャネル作成`をクリックして、Messaging APIを選択します。
+
+![](https://storage.googleapis.com/zenn-user-upload/luuz2vdgemont4yh7c43juslh3ei)
+
+チャネル名・説明などを入力します。
+
+![](https://storage.googleapis.com/zenn-user-upload/yjx5e6rwo1889mitk7pdtxhj9qdv)
+
+![](https://storage.googleapis.com/zenn-user-upload/fkkuquu0ug733ck79ctvfqihf6ll)
+
+参考として、チャネル名と説明を`今年のアニメ`として、大業種を`旅行・エンタメ・レジャー`、小業種を`その他娯楽・エンタメ`にしました。ここの記入は自由です。必要な情報を入力した後に`作成`をクリックします。
+チャネルを作成したら[公式の開発ガイドライン](https://developers.line.biz/ja/docs/messaging-api/building-bot/)に従って、以下の作業を完了させてください。
+
+- [Webhook URLを設定する](https://developers.line.biz/ja/docs/messaging-api/building-bot/#setting-webhook-url)
+  - 現時点ではURLには適当なもの(https://www.google.com/ など)を入れる形で大丈夫です
+- [長期のチャネルアクセストークンの発行](https://developers.line.biz/ja/docs/messaging-api/channel-access-tokens/#long-lived-channel-access-tokens)
+  - 発行したチャネルトークンは後のLINE BOT開発で使うのでメモをしてください
+- チャネルシークレットの確認
+  - `チャネル基本設定`のタブの`チャネルシークレット`をメモします
 
 # Cloud9のセットアップ
 
