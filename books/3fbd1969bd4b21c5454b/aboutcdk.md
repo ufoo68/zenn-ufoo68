@@ -30,3 +30,73 @@ AWSの各サービス（LambdaやAPI Gatewayなど）はそれぞれ別の開発
 それに対してAWS CDKを用いたコーディングでのインフラ開発はAWSすべてのインフラ構成または各サービスの設定値をすべてコードで管理することができます。すべてがコードにまとまっているのでシステムの複製も容易で、システム全体の把握も比較的楽に行なえます。IaCの開発は最初の導入時にはオーバーヘッドがかかりメインコンソールでの開発に比べてやりにくくなることも事実ですが、メンテナンスや保守などのランニングコストも減らすことができるので中長期的な開発では大きなメリットを得ることができます。
 
 # AWS CloudFormation
+
+[AWS CloudFormation](https://aws.amazon.com/jp/cloudformation/)について少し説明します。AWS CloudFormationはAWSのインフラを構築するためのIaCサービスです。**JSON**もしくは**YAML**の形式で**スタック**というAWSリソースの集まり（つまりはインフラの構成）をテンプレートファイルとして定義します。以下にスタックの例を示します([ユーザーガイド](https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/conditions-sample-templates.html)より抜粋)。
+
+- JSON
+
+```json
+{
+  "Resources" : {
+    "EC2Instance" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "ImageId" : { "Fn::FindInMap" : [ "RegionMap", { "Ref" : "AWS::Region" }, "AMI" ]},
+        "InstanceType" : { "Fn::If" : [
+          "CreateProdResources",
+          "c1.xlarge",
+          {"Fn::If" : [
+            "CreateDevResources",
+            "m1.large",
+            "m1.small"
+          ]}
+        ]}
+      }
+    },
+    
+    "MountPoint" : {
+      "Type" : "AWS::EC2::VolumeAttachment",
+      "Properties" : {
+        "InstanceId" : { "Ref" : "EC2Instance" },
+        "VolumeId"  : { "Ref" : "NewVolume" },
+        "Device" : "/dev/sdh"
+      }
+    },
+
+    "NewVolume" : {
+      "Type" : "AWS::EC2::Volume",
+      "Properties" : {
+        "Size" : "100",
+        "AvailabilityZone" : { "Fn::GetAtt" : [ "EC2Instance", "AvailabilityZone" ]}
+      }
+    }
+  }
+}
+```
+
+- YAML
+
+```yml
+Resources:
+  EC2Instance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", AMI]
+      InstanceType: !If [CreateProdResources, c1.xlarge, !If [CreateDevResources, m1.large, m1.small]]    
+  MountPoint:
+    Type: "AWS::EC2::VolumeAttachment"
+    Properties:
+      InstanceId: !Ref EC2Instance
+      VolumeId: !Ref NewVolume
+      Device: /dev/sdh
+  NewVolume:
+    Type: "AWS::EC2::Volume"
+    Properties:
+      Size: 100
+      AvailabilityZone: !GetAtt EC2Instance.AvailabilityZone
+```
+
+まずスタックとは各テンプレートファイル全体のことをいいます。このスタックの中に`Resources`と呼ばれるフィールドがあり、この`Resources`フィールドの中にある各要素たちがAWSのインフラを構成するリソースの集まりです。この各リソースにある`Type`フィールドが使用するAWSサービスを意味していて、`Propeties`がそのリソースの設定値となっています。他にもCloudFormationには様々な機能が提供されていますが、基本的には上記で示した形式のテンプレートファイルを記述してAWSのインフラを構成します。記述したテンプレートファイルをAWSへデプロイすることでCloudFormationが実行され、AWSのインフラが自動で構築されます。
+AWS CDKは上記で示したようなスタックをプログラミング言語で記述することができて、AWS CloudFormationで実行できるファイル形式に変換してくれるテンプレートエンジンとして使用します。
+
+# AWS CDKの嬉しいところ
