@@ -112,7 +112,37 @@ IaCでAWSを開発するメリットとCloudFormationについての説明をし
 - Construct
   - 複数もしくは単体のリソースの定義を抽象化したライブラリ
 
-`App`と`Stack`については次章以降のハンズオンでなんとなくの理解ができるかと思われます。CDKを使うメリットの一つはこの`Construct`が使えることだと思います。`Construct`は簡単に説明すると複数のリソースの集まり（例えばLambda＋API Gatewayの組み合わせなど）を共通化することができたり、AWS公式が提供するデフォルト値や便利なメソッドが設定されたリソース定義が使えたりする仕組みです。CloudFormationを用いる場合でもある程度のリソースの集まりを共通化してスタック内で使いまわしたい場面があったりしますが、その場合は独自でスクリプトを書いて外からテンプレートファイルを書き換える仕組みを自分で作成する必要があります。しかしCDKが提供する`Construct`という仕組みを利用すればリソース定義の共通化を独自スクリプトやサードパーティツールを使うことなく実現することができます。
+`App`と`Stack`については次章以降のハンズオンでなんとなくの理解ができるかと思われます。以下にCDKでのスタック実装の例を示します。
+
+```typescript
+export class CdkStack extends cdk.Stack {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props)
+
+    const table = new dynamodb.Table(this, 'Table', {
+      partitionKey: { name: 'key', type: dynamodb.AttributeType.STRING }
+    })
+
+    const handler = new lambda.Function(this, 'Handler', {
+      runtime: lambda.Runtime.NODEJS_10_X,
+      code: lambda.Code.asset('lambda'),
+      handler: 'index.handler',
+      environment: {
+        TABLE_NAME: table.tableName
+      }
+    })
+
+    table.grantReadWriteData(handler)
+
+    new apigawteway.LambdaRestApi(this, 'Endpoint', {
+      handler
+    })
+
+  }
+}
+```
+
+`Construct`を使うことでスタック内のリソース定義をシンプルにわかりやすく記述することができます（上記の例では`dynamodb.Table`、`lambda.Function`、`apigawteway.LambdaRestApi`それぞれのクラスが`Construct`です）。CDKを使うメリットの一つはこの`Construct`が使えることだと思います。`Construct`は簡単に説明すると複数のリソースの集まり（例えばLambda＋API Gatewayの組み合わせなど）を共通化することができたり、AWS公式が提供するデフォルト値や便利なメソッドが設定されたリソース定義が使えたりする仕組みです。CloudFormationを用いる場合でもある程度のリソースの集まりを共通化してスタック内で使いまわしたい場面があったりしますが、その場合は独自でスクリプトを書いて外からテンプレートファイルを書き換える仕組みを自分で作成する必要があります。しかしCDKが提供する`Construct`という仕組みを利用すればリソース定義の共通化を独自スクリプトやサードパーティツールを使うことなく実現することができます。
 またCDKの開発にTypeScriptを用いることで、各リソースのプロパティの型定義を利用することができます。型定義を利用することでコーディングの入力補完やリソース定義の記述ミスの検出などを行うことができます。
 
 次章よりCDKを用いたLINE BOT開発に触れていきます。実際にCDKでの開発を体験することでCDKを使うことのメリットを体感していただければと思います。
