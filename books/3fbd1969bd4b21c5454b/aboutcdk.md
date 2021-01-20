@@ -1,14 +1,10 @@
 ---
-title: "AWS CDK"
+title: "AWS CDKについて"
 ---
 
 # はじめに
 
-この章では本ハンズオンで用いる**AWS CDK**について簡単に説明します。
-
-# AWS CDKとは
-
-[AWS CDK（AWS Cloud Development Kit）](https://aws.amazon.com/jp/cdk/)はAWSのインフラを構成するためのフレームワークです。Infrastructure as Code（IaC）とも呼ばれていて、インフラの構築をコーディングで行うツールをいいます。CDKの開発はいくつかのプログラミング言語が対応していますが、本ハンズオンでは[TypeScript](https://www.typescriptlang.org/)を使用します。
+この章では本ハンズオンで用いる**AWS CDK**について簡単に説明します。[AWS CDK（AWS Cloud Development Kit）](https://aws.amazon.com/jp/cdk/)はAWSのインフラを構成するためのフレームワークです。Infrastructure as Code（IaC）とも呼ばれていて、インフラの構築をコーディングで行うツールをいいます。CDKの開発はいくつかのプログラミング言語が対応していますが、本ハンズオンでは[TypeScript](https://www.typescriptlang.org/)を使用します。
 
 # なぜコーディングでの開発をするのか
 
@@ -97,11 +93,10 @@ Resources:
 ```
 
 まずスタックとは各テンプレートファイル全体のことをいいます。このスタックの中に`Resources`と呼ばれるフィールドがあり、この`Resources`フィールドの中にある各要素たちがAWSのインフラを構成するリソースの集まりです。この各リソースにある`Type`フィールドが使用するAWSサービスを意味していて、`Propeties`がそのリソースの設定値となっています。他にもCloudFormationには様々な機能が提供されていますが、基本的には上記で示した形式のテンプレートファイルを記述してAWSのインフラを構成します。記述したテンプレートファイルをAWSへデプロイすることでCloudFormationが実行され、AWSのインフラが自動で構築されます。
-CDKは上記で示したようなスタックをプログラミング言語で記述することができて、CloudFormationで実行できるファイル形式に変換してくれるテンプレートエンジンとして使用します。
 
-# AWS CDKの嬉しいところ
+# AWS CDKとは
 
-IaCでAWSを開発するメリットとCloudFormationについての説明をしたところで、最後にCDKを使うメリットについて説明します。CDKは以下のような構成になっています。
+AWS CDK（以下CDKと略します）は前節で示したようなCloudFormation形式のテンプレートファイルをプログラミング言語で記述することができます。つまりCDKはCloudFormationのためのテンプレートエンジンとしての役割を担っています。CDKのアプリケーションは以下のような構成になっています。
 
 ![](https://storage.googleapis.com/zenn-user-upload/e6nm1uekm12zzrgz706s9lc9ynfr)
 
@@ -112,7 +107,7 @@ IaCでAWSを開発するメリットとCloudFormationについての説明をし
 - Construct
   - 複数もしくは単体のリソースの定義を抽象化したライブラリ
 
-`App`と`Stack`については次章以降のハンズオンでなんとなくの理解ができるかと思われます。以下にCDKでのスタック実装の例を示します。
+以下にCDKでのスタック実装の例を示します。
 
 ```typescript
 export class CdkStack extends cdk.Stack {
