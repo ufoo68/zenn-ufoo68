@@ -9,3 +9,4 @@ chapters:
   - prepare
   - aboutcdk
   - cdkinit
+  - lambda
