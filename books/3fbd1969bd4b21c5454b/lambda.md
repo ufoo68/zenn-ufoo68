@@ -1,5 +1,5 @@
 ---
-title: "Lambdaを立てよう"
+title: "Lambdaを実装しよう"
 ---
 
 # はじめに
@@ -117,3 +117,72 @@ CMD ["index.handler"]
 ```bash
 npm install --save 	@aws-cdk/aws-lambda
 ```
+
+ここで注意してほしいこととして、CDKに関するnpmパッケージはすべて同じバージョンにそろえている必要があります（バージョンが異なっているパッケージを用いるとコンパイルエラーが起こります）。例えば`package.json`の`dependencies`が以下のようになっているとき、
+
+```json
+{
+  "dependencies": {
+    "@aws-cdk/core": "1.85.0",
+    "source-map-support": "^0.5.16"
+  }
+}
+```
+
+`@aws-cdk/aws-lambda`は同じバージョン、`1.85.0`を指定する必要があります。
+
+```bash
+npm install --save @aws-cdk/aws-lambda@1.85.0
+```
+
+パッケージのインストールが完了したら`lib/cdk-bot-handson-stack.ts`を開きます。`The code that defines your stack goes here`というコメントアウト文が見つかるかと思います。この下にCDKのコードを実装していきます。
+
+```typescript:lib/cdk-bot-handson-stack.ts
+import * as cdk from '@aws-cdk/core';
+import * as lambda from '@aws-cdk/aws-lambda';
+
+export class CdkBotHandsonStack extends cdk.Stack {
+  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
+
+    // The code that defines your stack goes here
+    new lambda.DockerImageFunction(this, 'bot', {
+      code: lambda.DockerImageCode.fromImageAsset('./lambda/bot'),
+    });
+  }
+}
+```
+
+まず`@aws-cdk/aws-lambda`をインポートして、`DockerImageFunction`というConstructライブラリを使ってLambdaを定義してみました。このConstructライブラリは基本的には３つの引数を必要とします。
+
+- scope
+  - 最初の引数で、そのままの意味でスコープです。慣習的に`this`を指定します。
+- id
+  - ２つめの引数で、リソースに与えるロジカルIDです。CloudFormation内でリソースを一意に識別するために用います。
+- props
+  - 最後に与える引数で、省略可能な場合もあります。Objectの形式でリソースのパラメータ値を定義します。
+
+ここで用いた`DockerImageFunction`はコンテナ化したアプリケーション（`lambda/bot`化で実装したコード）をLambdaにデプロイさせるためのライブラリです。`props`に与えたObjectの中に`code`フィールドを指定します。これはコンテナ化してLambdaにデプロイさせるアプリケーションのディレクトリを意味します。他にも指定できるパラメータがありますが、省略した場合はConstructライブラリが決めたデフォルト値が指定されます。
+また今回はLambdaに２つの環境変数を与える必要がありました（`CHANNEL_ACCESS_TOKEN`と`CHANNEL_SECRET`）。環境変数を設定するために`environmente`フィールドを指定します。
+
+```typescript:lib/cdk-bot-handson-stack.ts
+import * as cdk from '@aws-cdk/core';
+import * as lambda from '@aws-cdk/aws-lambda';
+
+export class CdkBotHandsonStack extends cdk.Stack {
+  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
+
+    // The code that defines your stack goes here
+    new lambda.DockerImageFunction(this, 'bot', {
+      code: lambda.DockerImageCode.fromImageAsset('./lambda/bot'),
+      environment: {
+        CHANNEL_ACCESS_TOKEN: '<アクセストークン>',
+        CHANNEL_SECRET: '<チャンネルシークレット>',
+      },
+    });
+  }
+}
+```
+
+`<アクセストークン>`と`<チャンネルシークレット>`に`事前準備`の章で取得したものを書き込みます。

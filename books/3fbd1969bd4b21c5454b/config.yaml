@@ -1,6 +1,6 @@
 title: "AWS CDK×LINE BOtハンズオン～アプリとインフラをコード管理しよう～"
 summary: ""
-topics: []
+topics: ["typescript", "awscdk", "linebot"]
 published: false
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
@@ -10,3 +10,6 @@ chapters:
   - aboutcdk
   - cdkinit
   - lambda
+  - apigateway
+  - ssm
+  - conclusion
