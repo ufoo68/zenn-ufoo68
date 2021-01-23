@@ -1,5 +1,5 @@
 title: "AWS CDK×LINE BOtハンズオン～アプリとインフラをコード管理しよう～"
-summary: ""
+summary: "AWS CDKを使ってLINE BOTを実装します。ハンズオン内で作成したAWS CDKのコードは今後のLINE Bot開発にも流用できると思いますので、コレを機にAWS CDKでのLINE Bot開発デビューをしてみましょう！"
 topics: ["typescript", "awscdk", "linebot"]
 published: false
 price: 0 # 有料の場合200〜5000
