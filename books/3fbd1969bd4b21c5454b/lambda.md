@@ -15,6 +15,7 @@ AWSが提供するサーバーレスのサービスです。Lambdaを用いる�
 別のターミナルを開いて以下のコマンドを実行します。
 
 ```bash
+cd cdk-bot-handson
 mkdir -p lambda/bot
 cd lambda/bot
 ```
