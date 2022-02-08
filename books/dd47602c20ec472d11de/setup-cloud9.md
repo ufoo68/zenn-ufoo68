@@ -68,16 +68,3 @@ tmpfs           4.1G     0  4.1G   0% /sys/fs/cgroup
 /dev/nvme0n1p1   35G  9.0G   26G  27% /
 tmpfs           806M     0  806M   0% /run/user/1000
 ```
-
-# AWS 管理の一時認証情報 の無効化
-
-Cloud9 では最初にコンソールを開いたときに AWS 管理の一時認証情報が作成されます。 以降の手順では、Amplify CLI で発行するユーザの権限を使用するため、Cloud9 の一時認証情報を無効化します。
-
-AWS Cloud9 > Preferences > AWS SETTINGS > 「AWS managed temporary credentials:」 のトグルを Off にします。
-
-![](https://amplify-sns.workshop.aws/images/00_prequisites/cloud9-tmp-credential-off.png)
-
-----
-参考）
-
-- <https://docs.aws.amazon.com/cloud9/latest/user-guide/move-environment.html>
