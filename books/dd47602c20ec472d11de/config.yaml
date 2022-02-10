@@ -1,7 +1,7 @@
 title: "【Amplify Studio×LIFF×Figma】ローコードで電子チケットアプリを作るハンズオン"
 summary: "Figmaでローコード開発しよう！"
-topics: []
-published: false
+topics: ['amplify', 'react', 'liff']
+published: true
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
 chapters:
