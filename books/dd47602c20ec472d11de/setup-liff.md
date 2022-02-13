@@ -24,8 +24,8 @@ LINEログインになっているか確認します。
 日本を選択してください。
 ![](https://storage.googleapis.com/zenn-user-upload/29a0c036f01f-20220213.png)
 
-- 地域、チャネルアイコン
-地域は「日本」、チャネルアイコンを登録しましょう。（今回は必須ではありません）
+- チャネルアイコン
+チャネルアイコンを登録しましょう。（今回は必須ではありません）
 ![](<https://storage.googleapis.com/zenn-user-upload/bsd3zk5de6uwrjuygwzooxzwa9mb> =600x)
 
 - チャネル名、チャネル説明
@@ -46,12 +46,6 @@ LINEログインになっているか確認します。
 下記 開発者契約に同意し、チェックをして「作成」ボタンを押しましょう。
 ![](https://storage.googleapis.com/zenn-user-upload/o6zjh4ihmtazma4lm2xxs0qvclix)
 
-# チャネル基本設定
-
-- リンクされたボット（ページの下の方にあります）
-さきほど作成したMessagingAPIのチャネルを選択し、更新を行います。
-![](https://storage.googleapis.com/zenn-user-upload/408a53fbc738b75b62fbe287.png)
-![](https://storage.googleapis.com/zenn-user-upload/41c96c33b780321a0cf262f8.png)
 
 # LIFFの作成
 
