@@ -17,6 +17,10 @@ LINEログインになっているか確認します。
 Messaging API チャネルで使用したプロバイダーを選択しましょう。
 ![](<https://storage.googleapis.com/zenn-user-upload/ygq2jt08ywonwjy8ki5ap8rirtc7> =500x)
 
+- 会社・事業者の所在国・地域
+日本を選択してください。
+![](https://storage.googleapis.com/zenn-user-upload/29a0c036f01f-20220213.png)
+
 - 地域、チャネルアイコン
 地域は「日本」、チャネルアイコンを登録しましょう。（今回は必須ではありません）
 ![](<https://storage.googleapis.com/zenn-user-upload/bsd3zk5de6uwrjuygwzooxzwa9mb> =600x)
@@ -53,8 +57,8 @@ Messaging API チャネルで使用したプロバイダーを選択しましょ
 ![](https://storage.googleapis.com/zenn-user-upload/lafgohpi6jrva9gfltyej6073a5u)
 
 - LIFFアプリ名、サイズ
-LIFFアプリ名は「スマートリテール」、サイズは「Full」を選択しましょう。
-![](https://storage.googleapis.com/zenn-user-upload/dbad2384834df29e0feb1b07.png)
+LIFFアプリ名は「ライブチケット」、サイズは「Full」を選択しましょう。
+![](https://storage.googleapis.com/zenn-user-upload/5e737335b694-20220213.png)
 
 - エンドポイントURL
 エンドポイントURLは仮で「<https://example.com> 」と入力します。URLが決まったら変更します。
@@ -64,6 +68,14 @@ LIFFアプリ名は「スマートリテール」、サイズは「Full」を選
 Scopeは「profile」にチェックをつけましょう。
 ![](https://storage.googleapis.com/zenn-user-upload/0e668837fd2d-20220208.png)
 
+- ボットリンク機能
+ボットリンク機能は「Off」にチェックをつけましょう。
+![](https://storage.googleapis.com/zenn-user-upload/25fdff16dbfb-20220213.png)
+
+- 追加ボタン押下
+ここまでの設定が終われば追加ボタンを押下します。
+![](https://storage.googleapis.com/zenn-user-upload/e14175b91f0a-20220213.png)
+
 - LIFF ID と LIFF URL
-LIFF ID と LIFF URL をメモしましょう。
+画面遷移後に表示されるLIFF ID と LIFF URL をメモしましょう。
 ![](https://storage.googleapis.com/zenn-user-upload/xept4q6oi29q68tba0v05yteek86)
