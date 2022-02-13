@@ -9,9 +9,10 @@ title: "AWSの開発環境作成・準備（Cloud9）"
 # Cloud9
 
 - Cloud9のコンソール画面にアクセス
-下記のURLからCloud9のコンソール画面を開き、
+下記のURLからCloud9のコンソール画面を開き、`Create environment`ボタンを押下します
 <https://ap-northeast-1.console.aws.amazon.com/cloud9/home?region=ap-northeast-1>
 ![](https://storage.googleapis.com/zenn-user-upload/izcu5i5dd1s10ibjr99q1b7tb79q)
+
 [Name] 欄に任意の名前を入力してください。
 ![](https://amplify-sns.workshop.aws/images/00_prequisites/management-console-cloud9-3.png)
 Instance typeはtm5.large を選択します。小さいサイズを選択するとビルド時にメモリが不足する可能性があります。（あとは基本的にデフォルトのままで構いません）
@@ -47,10 +48,10 @@ Cloud9の初期EBSサイズは10GiBです。SAMを利用する際に10GBを超�
 ```
 cd ~/environment/linedc-ticket-liff
 chmod +x resize.sh
-./resize.sh
+./resize.sh 32
 ```
 
-df -Hのコマンドを実行し、/dev/nvme0n1p1が32GiB(35GB)になっていることを確認してください。
+df -Hのコマンドを実行し、/dev/nvme0n1p1が32Gになっていることを確認してください。
 :::message
 下記のコマンドをコピペして実行しましょう！
 :::
@@ -61,10 +62,10 @@ df -H
 
 ```
 Filesystem      Size  Used Avail Use% Mounted on
-devtmpfs        4.1G     0  4.1G   0% /dev
-tmpfs           4.1G     0  4.1G   0% /dev/shm
-tmpfs           4.1G  476k  4.1G   1% /run
-tmpfs           4.1G     0  4.1G   0% /sys/fs/cgroup
-/dev/nvme0n1p1   35G  9.0G   26G  27% /
-tmpfs           806M     0  806M   0% /run/user/1000
+devtmpfs        3.8G     0  3.8G   0% /dev
+tmpfs           3.8G     0  3.8G   0% /dev/shm
+tmpfs           3.8G  464K  3.8G   1% /run
+tmpfs           3.8G     0  3.8G   0% /sys/fs/cgroup
+/dev/nvme0n1p1   32G  8.4G   24G  27% /
+tmpfs           777M     0  777M   0% /run/user/1000
 ```
