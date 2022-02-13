@@ -14,8 +14,11 @@ LINEログインになっているか確認します。
 ![](<https://storage.googleapis.com/zenn-user-upload/tu6u2hc6g83thpcqgrdkw3se4ph7> =500x)
 
 - プロバイダ
-Messaging API チャネルで使用したプロバイダーを選択しましょう。
+既にプロバイダーを作っている場合 → 利用するプロバイダーを選択しましょう。
 ![](<https://storage.googleapis.com/zenn-user-upload/ygq2jt08ywonwjy8ki5ap8rirtc7> =500x)
+初めて → 新規プロバイダー作成を選択しプロバイダー名を入力しましょう。
+（LINEという文字は含められません。）
+![](<https://storage.googleapis.com/zenn-user-upload/ertfact9pdh71pu2xgwtu2uv2d0y> =600x)
 
 - 会社・事業者の所在国・地域
 日本を選択してください。
