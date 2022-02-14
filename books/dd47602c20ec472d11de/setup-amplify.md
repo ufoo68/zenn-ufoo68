@@ -25,14 +25,22 @@ Amplifyのインストールが完了したら下記を実行してAmplifyの初
 amplify init
 ```
 
-設定は以下のような感じです。JavaScriptやReactの自動判定をAmplifyが行ってくれるので基本はデフォルトで問題ないです。
+設定は以下のような感じです。
+
+
+プロジェクト名は`ticket` + `ご自身の名前`を設定ください。`ticketyamada`などです。
+amplifyのネーミングルールとしてアルファベットで20文字以内にする必要があります。
+
+このあとの処理でS3が自動作成されるのですが、「プロジェクト名」+「UTC時間(時分秒)」で作成されるため、全員が同じプロジェクト名であるとS3での衝突が発生しますので、プロジェクト名は異なる名前とします。
+
+他についてはJavaScriptやReactの自動判定をAmplifyが行ってくれるので基本はデフォルトで問題ないです。
 
 ```
-? Enter a name for the project linedcticketliff
+? Enter a name for the project ticketyamada
 The following configuration will be applied:
 
 Project information
-| Name: linedcticketliff
+| Name: ticketyamada
 | Environment: dev
 | Default editor: Visual Studio Code
 | App type: javascript
@@ -131,7 +139,7 @@ amplify publish
 ? Are you sure you want to continue? Yes
 ```
 
-デプロイに成功したらAmplifyのコンソール画面で今回デプロイしたアプリケーションが出てきます(`linedcticketliff`という名前のはずです)。下記のような表示になっていれば恐らくデプロイは成功です。
+デプロイに成功したらAmplifyのコンソール画面で今回デプロイしたアプリケーションが出てきます。下記のような表示になっていれば恐らくデプロイは成功です。
 
 ![](https://storage.googleapis.com/zenn-user-upload/fff99a5d624e-20220208.png)
 
