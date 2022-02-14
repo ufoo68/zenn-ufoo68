@@ -49,6 +49,10 @@ URLを入力するフォームが出てくるので、URLをペーストして�
 
 ![](https://storage.googleapis.com/zenn-user-upload/098b4402de9f-20220210.png)
 
+画面右の文字が「Deploying...」であれば、「Deployment successful - click for next steps」になるまでお待ちください。
+
+![](https://storage.googleapis.com/zenn-user-upload/4fb9fe4749da-20220213.png)
+
 取り込んだコンポーネントを選んで`Configure`からコンポーネントを設定していきます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/5e38bb6e5900-20220210.png)
