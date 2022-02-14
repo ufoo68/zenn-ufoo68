@@ -28,21 +28,27 @@ amplify init
 設定は以下のような感じです。JavaScriptやReactの自動判定をAmplifyが行ってくれるので基本はデフォルトで問題ないです。
 
 ```
-? Enter a name for the environment dev
-? Choose your default editor: Visual Studio Code
-? Choose the type of app that you're building javascript
-Please tell us about your project
-? What javascript framework are you using react
-? Source Directory Path:  src
-? Distribution Directory Path: build
-? Build Command:  npm run-script build
-? Start Command: npm run-script start
+? Enter a name for the project linedcticketliff
+The following configuration will be applied:
+
+Project information
+| Name: linedcticketliff
+| Environment: dev
+| Default editor: Visual Studio Code
+| App type: javascript
+| Javascript framework: react
+| Source Directory Path: src
+| Distribution Directory Path: build
+| Build Command: npm run-script build
+| Start Command: npm run-script start
+
+? Initialize the project with the above configuration? Yes
+Using default provider  awscloudformation
 ```
 
 AWS認証についての選択が次に出てきます。とりあえず`AWS profile`を選択します。
 
 ```
-Using default provider  awscloudformation
 ? Select the authentication method you want to use: 
 ❯ AWS profile 
   AWS access keys 
@@ -84,11 +90,20 @@ Press Enter to continue
 Cloud9のターミナルに戻ってEnterを押すと下のような表示がでてきます。`accessKeyId`と`secretAccessKey`に先ほどメモしたものをコピペしてください。
 
 ```
+Press Enter to continue
+
 Enter the access key of the newly created user:
 ? accessKeyId:  ********************
 ? secretAccessKey:  ****************************************
 This would update/create the AWS Profile in your local machine
 ? Profile Name:  default
+
+Successfully set up the new user.
+
+For more information on AWS Profiles, see:
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
+
+? Please choose the profile you want to use default
 ```
 
 # ホスティングとデプロイ
@@ -112,11 +127,20 @@ amplify hosting add
 npm i
 amplify publish
 ```
+```
+? Are you sure you want to continue? Yes
+```
 
 デプロイに成功したらAmplifyのコンソール画面で今回デプロイしたアプリケーションが出てきます(`linedcticketliff`という名前のはずです)。下記のような表示になっていれば恐らくデプロイは成功です。
 
 ![](https://storage.googleapis.com/zenn-user-upload/fff99a5d624e-20220208.png)
 
-`Domain`のところに表示されているURLをLIFFの設定画面で仮で設定した「<https://example.com> 」と差し替えます。差し替え後にLIFFのURLでアクセスをして、下のような画面表示になっていることを確認してください。
 
+LINEの画面に戻り、LIFF TABからライブチケットをクリックします。
+![](https://storage.googleapis.com/zenn-user-upload/b9e1e8121963-20220213.png)
+
+遷移先にエンドポイントURLが「https://example.com」になっていますので、これをAmplifyで生成された`Domain`で更新します。
+![](https://storage.googleapis.com/zenn-user-upload/72b6a7a74d50-20220213.png)
+
+差し替え後にLIFF URLでアクセスをして、下のような画面表示になっていることを確認してください。
 ![](https://storage.googleapis.com/zenn-user-upload/9f3f62c09cad-20220208.jpg)
