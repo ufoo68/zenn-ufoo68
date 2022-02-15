@@ -11,3 +11,4 @@ chapters:
   - setup-amplify
   - develop-amplifystudio
   - develop-react
+  - delete-environment
