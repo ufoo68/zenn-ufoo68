@@ -39,13 +39,29 @@ Amplifyのコンソールに戻ると、`Studioを起動する`ができるよ�
 
 今回はFigmaの使い方については特に触れないので、事前にFigmaで作成したチケットのコンポーネントをここにシェアします。こちらのデザインをコピーして使っていただいてかまいません。とりあえず作ったデザインをURLで共有できる形を作る必要があります。
 
-<https://www.figma.com/file/mNL7PaEiIgwhZetvlX1NVb/Ticket?node-id=0%3A1>
+<https://www.figma.com/community/file/1076126081312843251>
+
+`Duplicate`を押して頂けると自分のFigmaへコピーできます。
+
+![](https://storage.googleapis.com/zenn-user-upload/87efe5b6acb2-20220217.png)
+
+↓のような感じで取り込むことができたら、`Share`をクリックしましょう。
+
+![](https://storage.googleapis.com/zenn-user-upload/b09f6fdff319-20220217.png)
+
+モーダルが表示されるので、このまま`Copy link`をクリックするとURLをコピペできるようになります。
+
+![](https://storage.googleapis.com/zenn-user-upload/4593b5220a9a-20220217.png)
 
 Figmaの下準備ができれば、まずは左メニューから`UI Library`を選んで`Get started`をクリックします。
 
 ![](https://storage.googleapis.com/zenn-user-upload/de0800d54dd1-20220210.png)
 
-URLを入力するフォームが出てくるので、URLをペーストして取り込みを開始したら下のようにデザインを取り込むことができます。とりあえず`Accept All`してしまいましょう。
+URLを入力するフォームが出てくるので、先ほどのFigmaのURLをペーストして取り込みを開始しましょう。
+
+![](https://d2908q01vomqb2.cloudfront.net/0a57cb53ba59c46fc4b692527a38a87c78d84028/2021/12/02/Figma-Link-Copy-1024x358.png)
+
+そしたら下のようにデザインを取り込むことができます。とりあえず`Accept All`してしまいましょう。
 
 ![](https://storage.googleapis.com/zenn-user-upload/098b4402de9f-20220210.png)
 
