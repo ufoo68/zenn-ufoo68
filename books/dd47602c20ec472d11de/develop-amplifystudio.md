@@ -24,7 +24,7 @@ Amplifyのコンソールに戻ると、`Studioを起動する`ができるよ�
 
 ![](https://storage.googleapis.com/zenn-user-upload/c11eece8c114-20220208.png)
 
-`Add model`でこんな感じのデータを作成します。作成したら`Save and deploy`します。
+`Add model`でこんな感じのデータを作成します。作成したら`Save and deploy`します（環境によっては`Deploy`）。
 
 ![](https://storage.googleapis.com/zenn-user-upload/0dce4a49f30b-20220208.png)
 
