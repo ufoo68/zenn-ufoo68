@@ -15,7 +15,7 @@ title: "AWSの開発環境作成・準備（Cloud9）"
 
 [Name] 欄に任意の名前を入力してください。
 ![](https://amplify-sns.workshop.aws/images/00_prequisites/management-console-cloud9-3.png)
-Instance typeはtm5.large を選択します。小さいサイズを選択するとビルド時にメモリが不足する可能性があります。（あとは基本的にデフォルトのままで構いません）
+Instance typeはm5.large を選択します。小さいサイズを選択するとビルド時にメモリが不足する可能性があります。（あとは基本的にデフォルトのままで構いません）
 ![](https://amplify-sns.workshop.aws/images/00_prequisites/management-console-cloud9-4.png)
 VPCは特別な理由が無ければdefaultのものを選択して、`Next step`ボタンを押してください。
 ![](https://storage.googleapis.com/zenn-user-upload/6cv3qvohhfu9i7zqqzn73mcg5pz5)
