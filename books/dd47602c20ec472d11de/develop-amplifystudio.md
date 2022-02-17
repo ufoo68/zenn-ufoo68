@@ -6,15 +6,15 @@ title: "Amplify Studioでの開発"
 
 Amplify StudioはAmplifyに搭載された新機能となっています。今回は２つの機能を使ってみます。
 
-まずは、Amplifyで設定したアプリにAmplify Studioを設定します。まずは`Background environments`から`Setup Amplify Studio`をクリックします。
+まずは、Amplifyで設定したアプリにAmplify Studioを設定します。まずは`Background environments`から`Setup up Amplify Studio`をクリックします。
 
 ![](https://storage.googleapis.com/zenn-user-upload/5f00eab60003-20220208.png)
 
-`Amplify Studioを有効にします`を`ON`にします。
+`Amplify Studioを有効にします`を`On`にします。
 
 ![](https://storage.googleapis.com/zenn-user-upload/a1e33c3d03f4-20220208.png)
 
-Amplifyのコンソールに戻ると、`Studioを起動する`ができるようになっています。
+Amplifyのコンソールに戻ると、`Studioを起動する`がクリックできるようになっています。
 
 ![](https://storage.googleapis.com/zenn-user-upload/4deadd7f434f-20220208.png)
 
@@ -24,7 +24,7 @@ Amplifyのコンソールに戻ると、`Studioを起動する`ができるよ�
 
 ![](https://storage.googleapis.com/zenn-user-upload/c11eece8c114-20220208.png)
 
-`Add model`でこんな感じのデータを作成します。作成したら`Save and deploy`します（環境によっては`Deploy`）。
+`Add model`でこんな感じのデータを作成します。作成したら`Save and deploy`します。（環境によっては`Deploy`）。
 
 ![](https://storage.googleapis.com/zenn-user-upload/0dce4a49f30b-20220208.png)
 
@@ -69,7 +69,7 @@ URLを入力するフォームが出てくるので、先ほどのFigmaのURLを
 
 ![](https://storage.googleapis.com/zenn-user-upload/4fb9fe4749da-20220213.png)
 
-取り込んだコンポーネントを選んで`Configure`からコンポーネントを設定していきます。
+取り込んだコンポーネントを選んで`Configure`をクリックしてコンポーネントを設定していきます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/5e38bb6e5900-20220210.png)
 
@@ -80,14 +80,14 @@ URLを入力するフォームが出てくるので、先ほどのFigmaのURLを
 
 ![](https://storage.googleapis.com/zenn-user-upload/a15a65ca1e7d-20220210.png)
 
-`LINE user name`を選んで`Child properties`を設定します。
+次に`Elements tree`のところで`LINE user name`を選んで`Child properties`を設定します。
 
 - Prop: `label`
 - Type: `ticketProp.user_name`が選択できるはずです。
 
 ![](https://storage.googleapis.com/zenn-user-upload/4374c51b6657-20220210.png)
 
-`qr_img 1`を選んで`Child properties`を設定します。
+最後に`Elements tree`のところで`qr_img 1`を選んで`Child properties`を設定します。
 
 - Prop: `src`
 - Type: `ticketProp.user_qr`が選択できるはずです。
