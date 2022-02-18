@@ -25,5 +25,5 @@ Management Console -> Cognito -> ユーザープール -> 当イベントで作�
 # Lineチャンネルの削除
 Line Developers Console -> ライブチケット -> チャンネルの削除
 
-# Lineチャンネルの削除
+# Lineプロバイダーの削除
 Line Developers Console -> プロバイダー設定 -> プロバイダーの削除
