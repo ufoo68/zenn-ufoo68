@@ -22,6 +22,23 @@ Management Console -> IAM -> ユーザー -> 当イベントで作成したユ�
 Management Console -> Cognito -> ユーザープール -> 当イベントで作成したユーザープールをDelete
 `作成時刻`が作業時間内である物が対象です。
 
+# Cognito Federated Identitiesの削除
+Management Console -> Cognito -> フェデレーティッドアイデンティティ -> 当イベントで作成したフェデレーティッドアイデンティティを選択 -> ID プールの編集 -> IDプールの削除
+IDが`amplify_backend_manager_xxxxxxx`であり、IDブラウザの作成時間が作業時間内である物が対象です。
+手間ですが、複数個ある場合には一つ一つ確認が必要です。
+
+# Lambdaの削除
+Management Console -> Lambda -> 以下Lambdaを選択して削除
+最終更新が作業時間内である物が対象です。
+- `amplify-login-verify-auth-challenge-xxxx`
+- `amplify-login-custom-message-xxxx`
+- `amplify-login-create-auth-challenge-xxxx`
+- `amplify-login-define-auth-challenge-xxxx`
+
+# IAM Roleの削除
+Management Console -> IAM -> ロール -> `amplify-login-lambda-xxxx`
+`最後のアクティビティ`が作業時間内である物が対象です。
+
 # Lineチャンネルの削除
 Line Developers Console -> ライブチケット -> チャンネルの削除
 
