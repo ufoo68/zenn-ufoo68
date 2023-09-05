@@ -1,0 +1,8 @@
+title: "NextAuth・LINE Loginハンズオン"
+summary: "NextAuthとLINEログインで認証機能を実装するハンズオン"
+topics: [line, nextauth, hands-on]
+published: false
+price: 0 # 有料の場合200〜5000
+# 本に含めるチャプターを順番に並べましょう
+chapters:
+  - introduction
