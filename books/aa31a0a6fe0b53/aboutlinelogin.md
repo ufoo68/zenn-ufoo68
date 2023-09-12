@@ -25,4 +25,8 @@ LINEログインを使うことで、以下のような様々なプラットフ�
 
 # LINEログインのバージョン
 
-本書ではv2.1のLINEログインを扱います。このバージョンでは、OAuth2.0をベースとしたOpenID Connectのプロトコルがサポートされています。OpenID ConnectやOAuth2.0の各用語についての説明は後のページにて解説します。
+本書ではv2.1のLINEログインを扱います。このバージョンでは、OAuth2.0をベースとしたOpenID Connectのプロトコルがサポートされています。
+
+https://auth0.com/jp/intro-to-iam/what-is-oauth-2
+
+https://www.openid.or.jp/document/index.html#op-doc-openid-connect

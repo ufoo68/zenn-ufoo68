@@ -1,0 +1,46 @@
+---
+title: "ハンズオンの前に"
+---
+
+ここから実際にLINEログインを使った簡単なアプリケーションを構築しながら、セキュアなログインを学んでいきます。
+
+# 事前準備
+
+本書では以下のサービスを利用する形で進めていきます。
+
+GitHub
+
+https://github.com/
+
+Vercel
+
+https://vercel.com/
+
+LINE Developers
+
+https://developers.line.biz/ja
+
+これらのサービスは趣味程度の個人的な利用であれば料金の発生などは特にありません。また、アプリケーションの実装で使用するエディタについては本書ではGitHubが提供する`codespaces`を利用する形で進めます。
+
+https://github.co.jp/features/codespaces
+
+# 開発の流れ
+
+本書では以下の流れで開発環境の立ち上げを行います。
+
+```mermaid
+graph TD;
+  VercelでNext.jsのプロジェクト作成-->GitHubでcodespaces起動;
+  GitHubでcodespaces起動-->codespaces上でコーディング;
+```
+
+codespacesで開発を行う場合は特にローカルでの開発環境の構築作業は必要ありません。
+
+# この先あまり解説しないこと
+
+本書では以下のような言語やフレームについての詳しい説明は特にしません。
+
+- ReactやNext.jsの基本知識
+- TypeScriptの記法など
+
+ただしコーディングの量は特に多くもないので、一応これらの事前知識がない場合でも本書の内容の理解には差し支えないかとは思います。
