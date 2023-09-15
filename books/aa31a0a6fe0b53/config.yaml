@@ -1,5 +1,5 @@
-title: "Auth.jsとLINEログインで認証機能をセキュアに実装しよう"
-summary: "Auth.jsとLINEログインで認証機能を実装するハンズオン"
+title: "VercelとNext13でLINEログインを使ってみよう"
+summary: "Next.jsのバージョン13とVercelのクラウド環境を使って、LINEログインで認証機能を実装するハンズオン"
 topics: [line, nextauth, handson]
 published: false
 price: 0 # 有料の場合200〜5000
