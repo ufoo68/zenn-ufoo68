@@ -40,6 +40,6 @@ https://vercel.com/
 
 ![](https://storage.googleapis.com/zenn-user-upload/124eb6852a70-20231022.png)
 
-ちなみにデプロイされたNext.jsはVercelの`Project`タブの`Deployment`というところに記載されているURLで公開されています。
+ちなみにデプロイされたNext.jsはVercelの`Project`タブの`Deployment`か`Domains`というところに記載されているURLで公開されています。
 
 ![](https://storage.googleapis.com/zenn-user-upload/47a2aa6b6414-20231022.png)

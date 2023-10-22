@@ -4,7 +4,7 @@ title: "Auth.jsについて"
 
 # Auth.jsとは
 
-Auth.jsは認証機能のために作られたフレームワークです。昔はNextAuth.jsという名称だったようですが、最近はNext.js以外でも使用できるようになったのでAuth.jsに名称を変更したようです。
+Auth.jsは認証機能のために作られたフレームワークです。Auth.jsはNextAuth.jsという名称でもありますが、Next.js以外でも使用できるフレームワークを目指していることからAuth.jsに名称を変更したようです。
 
 https://authjs.dev/
 
