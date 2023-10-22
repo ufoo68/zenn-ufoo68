@@ -21,6 +21,7 @@ LINE Developers
 https://developers.line.biz/ja
 
 これらのサービスは趣味程度の個人的な利用であれば料金の発生などは特にありません。また、アプリケーションの実装で使用するエディタについては本書ではGitHubが提供する`codespaces`を利用する形で進めます。
+ちなみにVercelはGitHubとの連携も行うことを予定しているのでGitHubのアカウントでユーザー登録しておくことをおすすめします。
 
 https://github.co.jp/features/codespaces
 
