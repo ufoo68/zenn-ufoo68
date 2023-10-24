@@ -87,8 +87,8 @@ export const LogoutButton = () => {
 };
 ```
 
-`signIn()`がNext.Authでの認証をさせるためのメソッドとなります（同様に`signOut()`は認証後のセッションを切るメソッド）。では実際にログイン・ログアウトボタンのカスタムコンポーネントをページ上に導入してみます。
-ルートページである`app/page.tsx`の内容を書き換えます。
+`signIn()`がNext.Authでの認証をさせるためのメソッドとなります（同様に`signOut()`は認証後のセッションを切るメソッド）。ちなみに上部に`use client`という記述がありますが、これは必要です(`Error: Event handlers cannot be passed to Client Component props.`というエラーが発生します)。
+では実際にログイン・ログアウトボタンのカスタムコンポーネントをページ上に導入してみます。ルートページである`app/page.tsx`の内容を書き換えます。
 
 ```tsx:app/page.tsx
 import { getServerSession } from 'next-auth';
@@ -135,9 +135,3 @@ git push
 ```
 
 GitHubとVercelが連携されているので、GitHubに新たにプッシュされた内容が自動でVercel上にビルドされデプロイされます。
-
-# さいごに
-
-今回実装したアプリケーションは以下で公開してます。もしビルドに失敗した場合はこちらを参考にしてください。
-
-https://github.com/ufoo68/next-line-handson
