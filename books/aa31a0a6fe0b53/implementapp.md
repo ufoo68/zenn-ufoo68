@@ -72,7 +72,10 @@ import { signIn, signOut } from "next-auth/react";
 
 export const LoginButton = () => {
   return (
-    <button onClick={() => signIn()}>
+    <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      onClick={() => signIn('line', { callbackUrl: '/' })}
+    >
       ログイン
     </button>
   );
@@ -80,7 +83,10 @@ export const LoginButton = () => {
 
 export const LogoutButton = () => {
   return (
-    <button onClick={() => signOut()}>
+    <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      onClick={() => signOut()}
+    >
       ログアウト
     </button>
   );
@@ -94,18 +100,36 @@ export const LogoutButton = () => {
 import { getServerSession } from 'next-auth';
 import { LoginButton, LogoutButton } from './components/buttons'
 import { authOptions } from './options';
+import { redirect } from 'next/navigation';
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
+  if (!session) {
+    redirect('/sign_in')
+  }
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      {session ? <LogoutButton/> : <LoginButton/>}
+      <div>Welcome: {session?.user?.name}</div>
+      <LogoutButton/>
     </main>
   )
 }
 ```
 
 `getServerSession`はサーバー側でセッションを取得するためのメソッドです（App Routerは`use client`を明記しない限り、サーバーサイドでのページレンダリングが基本となる）。引数として先程の`authOptions`が流用されます。
+このコードではセッションが取得できない場合は`sign_in`ページにリダイレクトされる実装になっているので、実際にリダイレクト先のページも`app/sign_in/page.tsx`に実装してみます。
+
+```tsx:app/sign_in/page.tsx
+import { LoginButton, LogoutButton } from '../components/buttons'
+
+export default async function Home() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center">
+      <LoginButton/>
+    </main>
+  )
+}
+```
 
 # 環境変数を設定
 
