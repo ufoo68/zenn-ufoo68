@@ -98,7 +98,7 @@ export const LogoutButton = () => {
 
 ```tsx:app/page.tsx
 import { getServerSession } from 'next-auth';
-import { LoginButton, LogoutButton } from './components/buttons'
+import { LogoutButton } from './components/buttons'
 import { authOptions } from './options';
 import { redirect } from 'next/navigation';
 
@@ -120,7 +120,7 @@ export default async function Home() {
 このコードではセッションが取得できない場合は`sign_in`ページにリダイレクトされる実装になっているので、実際にリダイレクト先のページも`app/sign_in/page.tsx`に実装してみます。
 
 ```tsx:app/sign_in/page.tsx
-import { LoginButton, LogoutButton } from '../components/buttons'
+import { LoginButton } from '../components/buttons'
 
 export default async function Home() {
   return (
