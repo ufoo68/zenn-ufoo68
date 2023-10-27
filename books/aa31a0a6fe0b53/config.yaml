@@ -1,4 +1,4 @@
-title: "VercelとNext.jsでLINEログインを使ってみよう"
+title: "Vercel×Next.js×Auth.jsでLINEログインを使ってみよう"
 summary: "Next.jsとVercelのクラウド環境を使って、LINEログインで認証機能を実装するハンズオン"
 topics: [line, nextauth, handson]
 published: true
