@@ -41,7 +41,7 @@ function App() {
   const [ticket, setTicket] = useState({ user_name: '', user_qr: '' });
   useEffect(() => {
     // TODO: チケット情報の取得
-  });
+  }, []);
   const registerTicket = () => {
     //TODO:  チケット登録の実装
   }
@@ -75,7 +75,7 @@ function App() {
   const [ticket, setTicket] = useState({ user_name: '', user_qr: '' });
   useEffect(() => {
     // TODO: チケット情報の取得
-  });
+  }, []);
   const registerTicket = () => {
     //追加箇所 Start
     liff.init({ liffId: process.env.REACT_APP_LIFF_ID }).then(async () => {
@@ -166,7 +166,7 @@ function App() {
       });
     });
     //追加箇所 End
-  });
+  }, []);
   
   const registerTicket = () => {
     liff.init({ liffId: process.env.REACT_APP_LIFF_ID }).then(async () => {
@@ -228,7 +228,7 @@ function App() {
         }
       });
     });
-  });
+  }, []);
   
   const registerTicket = () => {
     liff.init({ liffId: process.env.REACT_APP_LIFF_ID }).then(async () => {
