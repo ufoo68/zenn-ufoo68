@@ -5,7 +5,7 @@ title: "事前準備"
 本書のハンズオンを進めるにあたって、事前に以下のサービスにアカウント登録をしてください。
 
 
-- LINE Developers（LIFFアプリ開発に必要）
+- LINE Developers（LINEミニアプリ開発に必要）
 
 https://developers.line.biz/ja/
 
