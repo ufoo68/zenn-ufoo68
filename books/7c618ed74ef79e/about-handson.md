@@ -12,7 +12,7 @@ UI生成までの実際のやり取りは↓のような感じです。
 
 https://v0.dev/chat/xcmr9sLHEAx
 
-今回作るアプリケーションは↓です。
+# URLなど
 
 - demo
 
