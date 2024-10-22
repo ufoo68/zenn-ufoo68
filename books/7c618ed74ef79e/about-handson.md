@@ -8,10 +8,16 @@ v0を使って生成した以下のような「メッセージアプリのプロ
 
 ![](https://storage.googleapis.com/zenn-user-upload/565d7bac4832-20241007.png =200x)
 
-実際のやり取りは↓のような感じで作成しています。
+UI生成までの実際のやり取りは↓のような感じです。
 
 https://v0.dev/chat/xcmr9sLHEAx
 
-実際に生成されたNext.jsのコードは↓に公開しています。
+今回作るアプリケーションは↓です。
 
-https://github.com/ufoo68/v0-lineminiapp-handson/tree/base
+- demo
+
+https://line-next-v0-demo.vercel.app
+
+- github
+
+https://github.com/ufoo68/line-next-v0-demo
