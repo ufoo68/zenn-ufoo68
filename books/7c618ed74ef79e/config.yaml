@@ -1,7 +1,7 @@
 title: "v0で作るノーデザインLINEミニアプリ"
 summary: "v0というフロントエンド向け生成AIを使って、LINEミニアプリを作成する方法を解説します。"
 topics: [v0, LIFF]
-published: false
+published: true
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
 chapters:
@@ -10,3 +10,5 @@ chapters:
   - about-handson
   - create-miniapp-channel
   - install-v0
+  - implement-miniapp
+  - deploy-miniapp

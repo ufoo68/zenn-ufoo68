@@ -13,9 +13,6 @@ https://developers.line.biz/ja/
 
 https://vercel.com/
 
-- GitHub（デプロイの連携とかに使う）
-
-https://github.co.jp/
 
 - v0（今回の肝なので当然必要）
 
