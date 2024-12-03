@@ -14,10 +14,6 @@ https://v0.dev/chat/xcmr9sLHEAx
 
 # URLなど
 
-- demo
-
-https://line-next-v0-demo.vercel.app
-
 - github
 
 https://github.com/ufoo68/line-next-v0-demo
