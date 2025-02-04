@@ -4,7 +4,7 @@ title: "ミニアプリのコード実装"
 
 # 少し解説
 
-`create-liff-app`を使ってNext.jsのテンプレートを導入するとLIFFを使ったアプリ開発のための下準備が予め実装されています。具体的には`pages/_app.tsx`での実装内容です。
+`create-liff-app`を使ってNext.jsのテンプレートを導入するとLIFFを使ったアプリ開発のための下準備が予め実装されています。ただし今回はline loginの機能を使ってlineのアカウント情報を書き換えたいので、`pages/_app.tsx`の内容を少し書き換えます。
 
 ```tsx:pages/_app.tsx
 import "../styles/globals.css";

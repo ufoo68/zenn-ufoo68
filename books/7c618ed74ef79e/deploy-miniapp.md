@@ -39,13 +39,13 @@ npx vercel env add NEXT_PUBLIC_LIFF_ID
 multiple)? Production, Preview, Development
 ```
 
-環境変数の設定後に再デプロイをします。
+環境変数の設定後にprod環境へ再デプロイをします。
 
 ```bash
-npx vercel
+npx vercel --prod
 ```
 
-デプロイしたアプリのURLはデプロイ後に表示される`✅  Preview:`の部分で確認できます。このURLを`ミニアプリ作成`の部分で編集したLINE Developersのコンソールの`ウェブアプリ設定`タブの `エンドポイントURL`の開発用の部分を編集して書き換えます。
+prod環境へデプロイしたアプリのURLは`https://{プロジェクト名：上記の例だとmy-app}.vercel.app`という形で公開されています。そのURLを`ミニアプリ作成`の部分で編集したLINE Developersのコンソールの`ウェブアプリ設定`タブの `エンドポイントURL`の開発用の部分を編集して書き換えます。
 
 ![](https://storage.googleapis.com/zenn-user-upload/81322184668d-20241201.png)
 
